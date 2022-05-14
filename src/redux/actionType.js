@@ -1,0 +1,5 @@
+export const ADD_NEW_CHAPTER = "ADD_NEW_CHAPTER";
+export const EDIT_CHAPTER = "EDIT_CHAPTER";
+export const DELETE_CHAPTER = "DELETE_CHAPTER";
+export const GET_DATA = "GET_DATA";
+export const SET_CURRENT_CHAPTERS = "SET_CURRENT_CHAPTERS";
