@@ -28,7 +28,7 @@ const crudChapter = (state = initialState, action) => {
       let currentSubject = currentStandard.subjects.find(
         (data) => subjectName === data.subjectName
       );
-      console.log("SET CURRENT ", { currentSubject });
+      // console.log("SET CURRENT ", { currentSubject });
       return {
         ...state,
         currentData: currentSubject,
@@ -60,14 +60,25 @@ const crudChapter = (state = initialState, action) => {
 
     case ADD_NEW_CHAPTER:
       let currentArr = {};
-      state.currentSubject
-        ? (currentArr = state.currentSubject)
-        : (currentArr = state.currentData);
-      console.log("add_ch", currentArr.Chapters.length + 1);
+
+      // use if-else
+      // if (state.currentSubject) {
+      //   currentArr = state.currentSubject;
+      // } else {
+      currentArr =
+        state.currentData && state.currentData.Chapters
+          ? state.currentData
+          : {
+              Chapters: [],
+            };
+      console.log({ currentArr });
+      // console.log("add_ch", currentArr.Chapters.length + 1);
       let newchapter = {
-        id: currentArr.Chapters.length + 1,
+        id: currentArr.Chapters.length + Math.random(),
+
         name: action.payload.newChapterName,
       };
+      console.log({ newchapter });
       return {
         ...state,
         currentData: {

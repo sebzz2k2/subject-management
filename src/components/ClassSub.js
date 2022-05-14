@@ -17,7 +17,7 @@ import ChapterNames from "./ChapterNames";
 
 const ClassSub = () => {
   let { currentData, data } = useSelector((state) => state);
-
+  console.log({ currentData });
   const [classData, setClassData] = useState({
     standard: null,
     subjects: "",
